@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Ozioma's Profile Card </title>
+        <link rel = "stylesheet" href="profileCard.css"/>
+
+        
+    </head>
+
+    <body>
+            <div class="profile-card">
+            <nav class="nav-links">
+                <a href="profileCard.html" target="_blank" class="nav-icon">Profile</a>
+                <a href="aboutme.html" target="_blank" class="nav-icon">About Me</a>
+                <a href="contactus.html" class="nav-icon">Contact Us</a>
+            </nav>
+
+            <main class="container">
+                <h2 class="contactus-h2">Contact Us</h2>
+                <form id="contactForm">
+
+                    <div class="form-group">
+                    <label for="fullname">Fullname</label>
+                        <input type="text" id="name" name="name"  data-testid="test-contact-name" aria-describedby="error-name" 
+                        class="error" placeholder="Enter your fullname"/>
+                        <p id="error-name" data-testid="test-contact-error-name" class="error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" data-testid="test-contact-email" aria-describedby="error-email"
+                         placeholder="Enter your email"/>
+                         <p id="error-email" data-testid="test-contact-error-email" class="error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" data-testid="test-contact-subject" 
+                        aria-describedby="error-subject" placeholder="Enter your subject"/>
+                        <p id="error-subject" data-testid="test-contact-error-subject" class="error"></p>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message rows="5"  data-testid="test-contact-message"
+                        aria-describedby="error-message" placeholder="Enter at your message, least 10 characters..."></textarea>
+                        <p id="error-message" data-testid="test-contact-error-message" class="error"></p>
+                    </div>
+
+                    <button type="submit" data-testid="test-contact-submit">Submit</button>
+
+                    <p id="success-message" data-testid="test-contact-success" class="success"></p>
+                    <field></field><p data-testid="test-contact-error-email"></p>
+                    <p data-testid="test-contact-success"></p>
+
+                </form>
+            </main>
+            </div>
+
+            <script>
+const form = document.getElementById("contactForm");
+const successMessage = document.getElementById("success-message");
+
+form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value.trim();
+    const message = form.message.value.trim();
+    let valid = true;
+
+    const errors = {
+        name: document.getElementById("error-name"),
+        email: document.getElementById("error-email"),
+        subject: document.getElementById("error-subject"),
+        message: document.getElementById("error-message"),
+    };
+
+    //reset the form
+    Object.values(errors).forEach((err) => {
+        err.style.display = "none";
+        err.textContent = "";
+    });
+    successMessage.style.display = "none";
+
+    //validation rules
+    if (!name) {
+        errors.name.textContent = "Please enter your Full name.";
+        errors.name.style.display = "block";
+        valid = false;
+    }
+
+    const emailPattern = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+    if (!email || !emailPattern.test(email)) {
+        errors.email.textContent = "Please enter a valid email.";
+        errors.email.style.display = "block";
+        valid = false;
+    }
+
+    if (!subject) {
+        errors.subject.textContent = "Please subject is required.";
+        errors. subject.style.display = "block";
+        valid = false;
+    }
+
+    if (!message || message.length < 10) {
+        errors.message.textContent = "Message must be at least 10 characters.";
+        errors.message.style.display = "block";
+        valid = false;
+    }
+
+    //success
+    if (valid) {
+        successMessage.textContent = "Your message has been sent successfully!";
+        successMessage.style.display = "block";
+        form.reset();
+    }      
+});
+
+            </script>
+    </body>
+    
+</html>

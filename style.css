@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.profile-card {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    margin-top: 50px;
+    padding: 25px;
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border: 5px solid wheat;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.profile-name, .profile-desc, .short-bio, .hobbies-list, .dislikes-list, 
+.location, .aboutme-p, .contactus-h2 {
+    color: wheat;
+}
+
+.hobbies-section, .dislikes-section {
+    padding: 20px 20px; 
+}
+
+.hobbies-list, .dislikes-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 6px;
+}
+
+.hobbies-list li, .dislikes-list li {
+    background: #343434;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.social-links {
+    margin: 15px 0;
+}
+
+.social-icon {
+    background-color: wheat;
+    color: #333;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.aboutme-section {
+    margin: 20px;
+    text-align: left;
+}
+
+.aboutme-h2 {
+    color: whitesmoke;
+}
+
+.nav-links {
+    margin: 15px 0;
+}
+
+.nav-icon {
+    background-color: wheat;
+    color: #333;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+ textarea {
+    resize: none;
+    height: 100px;
+ }
+
+ button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background 0.5s;
+ }
+
+ button:hover {
+    background: #0056b3;
+ }
+
+ .message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+    display: none;
+ }
+
+ .success {
+    color: green;
+ }
+
+ .error {
+    color: red;
+ }

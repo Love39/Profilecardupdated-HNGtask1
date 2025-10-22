@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Ozioma's Profile Card </title>
+        <link rel = "stylesheet" href="profileCard.css"/>
+        <script src = "path/to/vanilla. js"></script>
+        
+    </head>
+
+    <body>
+        <div class="container">
+        <div class="profile-card">
+            <article data-testid="test-profile-card">
+            <nav class="nav-links">
+                <a href="profileCard.html" class="nav-icon">Profile</a>
+                <a href="aboutme.html" target="_blank" class="nav-icon">About Me</a>
+                <a href="contactus.html" target="_blank" class="nav-icon">Contact Us</a>
+            </nav>
+
+            <figure data-testid="test-user-avatar"><img src="avatar.jpg" alt="Avatar" class="avatar"></figure>
+            <h2 class="profile-name" data-testid="test-user-name">Ozioma Love Ihezukwu</h2>
+            <h3 class="profile-desc">Front-End Developer</h3>
+            <br>
+            <p class = "short-bio" data-testid="test-user-bio">Front-End Developer passionate about crafting responsive, user-friendly web
+                interfaces. Skilled in HTML, CSS, JavaScript with a focus on creating seamless digital experiences that blend design and
+                functionality.</p>
+                
+            <section class="hobbies-section">
+            <ul class="hobbies-list" data-testid="test-user-hobbies">I enjoy:
+                <li>Solving puzzles.</li> 
+                <li>Engaging in physical activities.</li> 
+                 <li>Listening to music.</li>
+            </section>
+                
+            <section class="dislikes-section">
+            <ul class="dislikes-list" data-testid="test-user-dislikes">I am not a fan of:
+                <li>Unclear requirements.</li>
+                 <li>Unstructured code.</li>
+            </ul>
+            </section>
+            <br>
+            <div class = "email-address" data-testid="emailAddress">
+                <a href="mailto:lovelyozzy@gmail.com" id = "email" >lovelyozzy@gmail.com</a>
+            </div>
+
+            <nav class="social-links" data-testid="socialLinks">
+                <a href="https://github.com/Love39" target="_blank" rel="noopener noreferrer" class="social-icon">GitHub</a>
+                <a href="https://www.linkedin.com/in/oziomalove" target="_blank" rel="noopener noreferrer" class="social-icon" data-testid="test-user-social-links">LinkedIn</a>
+            </nav>
+
+            <div class="utc-time" data-testid="test-user-time">Current Time in UTC: <span id = "utc-time">Loading...</span></div>
+            </article>
+            </div>
+
+        </div>
+        <script src="profileCard.js"></script>
+
+         
+    </body>
+    
+</html>
