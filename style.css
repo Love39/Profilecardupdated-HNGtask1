@@ -80,6 +80,7 @@ body {
 
 .nav-links {
     margin: 15px 0;
+    white-space: nowrap;
 }
 
 .nav-icon {
@@ -141,4 +142,5 @@ input, textarea {
 
  .error {
     color: red;
+
  }
